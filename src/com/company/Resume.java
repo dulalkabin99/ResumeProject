@@ -70,7 +70,7 @@ public class Resume {
 @Override
     public String toString(){
         String printResume="";
-        printResume=(info.getName()+ "\n"+info.getEmail()+"\n\nEducation:\n"+educ+"\n\nExperiences: "+exList+ "\n\nSkills"+skill.getSkill());
+        printResume=(info.getName()+ "\n"+info.getEmail()+"\n");
         return printResume;
     }
 }
