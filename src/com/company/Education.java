@@ -43,11 +43,7 @@ public class Education {
     @Override
     public String toString() {
         String display = "";
-        for (Education s : eduAr.addEdu()){ display += s + "\n";}
+        display=degreeOrCertificate+ ",\n"+collegeOrSchool+", "+year+"\n\n";
         return display;
-    }
-
-        public String print() {
-            return  ""+  collegeOrSchool + "  " + year +"\n" + degreeOrCertificate;
     }
 }

@@ -15,9 +15,8 @@ public class ExpArray {
 
     @Override
     public String toString() {
-        String display ="";
-        for(Experience s:exp1){
-            display+= s+"\n";
+        String display ="";{
+            display=" "+exp1;
         }
         return display;
     }

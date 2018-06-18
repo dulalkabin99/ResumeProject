@@ -1,12 +1,12 @@
 package com.company;
 
 public class Experience {
-    private String  jobTitle;
+    private String jobTitle;
     private String company;
     private String fromDate;
     private String toDate;
     private String jobDesc;
-    ExpArray ex=new ExpArray();
+    ExpArray ex = new ExpArray();
 
     public Experience() {
 
@@ -53,26 +53,21 @@ public class Experience {
         this.jobDesc = jobDesc;
     }
 
-    public Experience(String jobT, String comp, String fromDat, String toDate, String jobD){
-        this.jobTitle=jobT;
-        this.company=comp;
-        this.fromDate=fromDat;
-        this.toDate=toDate;
-        this.jobDesc=jobD;
-
+    public Experience(String jobT, String comp, String fromDat, String toDate, String jobD) {
+        this.jobTitle = jobT;
+        this.company = comp;
+        this.fromDate = fromDat;
+        this.toDate = toDate;
+        this.jobDesc = jobD;
 
 
     }
+
     @Override
     public String toString() {
-        String display ="";
-        for(Experience s:Experience) display += s + "\n";
+        String display = "";
+        display = "\n"+jobTitle + ",\n" + company + ", " + fromDate+"-"+toDate + "\n"+jobDesc+"\n\n";
         return display;
+
     }
-    public String print() {
-        return (jobTitle + "\n" + company + ",  " + fromDate + " - " + toDate +" ");
-    }
-
-
-
 }

@@ -17,12 +17,15 @@ public class Main {
     private static String todate;
     private static String jobDescription;
     private static String skills;
+    private static Resume res=new Resume();
+    private static EducationArray edArray = new EducationArray();
+    private static ExpArray expArray=new ExpArray();
 
     public static void main(String[] args) {
          Scanner sc = new Scanner(System.in);
-         Resume res=new Resume();
-        EducationArray edArray = new EducationArray();
-        ExpArray expArray=new ExpArray();
+        // Resume res=new Resume();
+        //EducationArray edArray = new EducationArray();
+       // ExpArray expArray=new ExpArray();
 
 
 
@@ -74,9 +77,10 @@ public class Main {
             System.out.println("To date, Format: MON-YYYY");
             todate = sc.nextLine();
             go = true;
+            jobDescription="";
             while (go) {
                 System.out.println("Please enter a single Duty");
-                jobDescription += ("\n" + sc.nextLine());
+                jobDescription += ("\n\t" + sc.nextLine());
                 System.out.println(":::::::::::::::::::::::::::::::::::::::::::::::::::::");
                 System.out.println("Do you have another duty to add? Y/N");
                 more = sc.nextLine();
@@ -106,9 +110,27 @@ public class Main {
 
         }res.skill.setSkill(skills);
 
-        System.out.println(res.printResume());
+
+
+        //String resST=format(res.toString());
+        //System.out.println(resST);
+        System.out.println(resPrint());
+        System.out.println("-------------------------------------");
+        String edA=format1(edArray);
+        System.out.println(edA);
+        String exA=format(expArray);
+        System.out.println(exA);
     }
 
+    private static String format1(EducationArray edArray) {
+        String formattedString = edArray.toString()
+                .replace("null", "")
+                .replace("[", "")
+                .replace("]", "")
+                .trim();
+
+        return formattedString;
+    }
 
 
 
@@ -121,5 +143,20 @@ public class Main {
         return go;
     }
 
+    public static String format(ExpArray expArray){
+        String formattedString = expArray.toString()
+                .replace("null", "")
+                .replace("[", "")
+                .replace("]", "")
+                .trim();
 
+        return formattedString;
+    }
+
+    public static String resPrint(){
+        String printResume="";
+        printResume=(res.info.getName()+ "\n"+res.info.getEmail()+"\n\nEducation:\n"+format1(edArray)+"\n\nExperiences: "+format(expArray)+ "\n\nSkills"+res.skill.getSkill());
+        return printResume;
+    }
 }
+

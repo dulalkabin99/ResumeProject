@@ -15,9 +15,8 @@ public class EducationArray {
 
     @Override
     public String toString() {
-        String display ="";
-        for(Education s:education1){
-            display+= s+"\n";
+        String display ="";{
+            display=" "+education1;
         }
         return display;
 
